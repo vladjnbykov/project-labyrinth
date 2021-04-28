@@ -25,6 +25,7 @@ h2 {
     color: navy;
     background-color: rgb(236, 246, 246);
     border: 1px solid rgb(162, 162, 243);
+    outline: none;
 }
 
 .start-btn {

@@ -1,5 +1,4 @@
 /* eslint-disable */
-
 /* eslint-disable linebreak-style */
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
@@ -9,12 +8,22 @@ import './startScreen.css'
 
 const StartScreen = () => {
     const [inputValue, setInputValue] = useState('')
-
+    
     const dispatch = useDispatch()
 
     const onUsernameSet = () => {
         dispatch(paths.actions.setUsername(inputValue))
         dispatch(generatePath())
+    }
+
+    const onStartBtn = () => {
+        if(inputValue) {
+            return(
+                <button className="start-btn" onClick={onUsernameSet}>
+                    &nbsp;Start<span></span>
+                </button> 
+            )
+        }
     }
 
     return (
@@ -25,10 +34,10 @@ const StartScreen = () => {
                 type="text"
                 value={inputValue}
                 onChange={event => setInputValue(event.target.value)}
-            />    
-            <button className="start-btn" onClick={onUsernameSet}>&nbsp;Start<span></span></button>
+                required
+            />
+            {onStartBtn()}   
         </div>
-
     )
 }
 
