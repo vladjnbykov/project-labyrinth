@@ -55,9 +55,9 @@ export const generatePath = (direction) => {
             },
             body: JSON.stringify({ username: getState().paths.username })
             })
-        .then(res => res.json())
-        .then(path => dispatch(paths.actions.setPath(path)))
-    
+            .then(res => res.json())
+            .then(path => dispatch(paths.actions.setPath(path)))
+
         
         
 
