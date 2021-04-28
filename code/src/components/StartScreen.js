@@ -16,11 +16,6 @@ const StartScreen = () => {
         dispatch(generatePath())
     }
 
-    
-        
-
-
-
     return (
         <div>
             <p>Welcome to labyrinth! Enter username and start the game!!</p>

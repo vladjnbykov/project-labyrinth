@@ -8,8 +8,10 @@ import paths, { generatePath } from 'reducers/paths'
 const GameScreen = () => {
     const path = useSelector(store => store.paths.path)
 
-    const onPathChoice = (way) => {
-        dispatch(generatePath(way))
+    const dispatch = useDispatch()
+
+    const onPathChoice = (direction) => {
+        dispatch(generatePath(direction))
     }
     return (
         <div>
