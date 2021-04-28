@@ -24,7 +24,7 @@ const paths = createSlice({
     }
 
 
-})
+}) 
 
 export const generatePath = () => {
     return (dispatch, getState) => {
