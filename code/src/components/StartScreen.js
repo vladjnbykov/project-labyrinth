@@ -28,15 +28,18 @@ const StartScreen = () => {
 
     return (
         <div className="start-game">
-            <h2>Welcome to labyrinth!</h2>
-            <h4> Enter username and start the game!!</h4>
-            <input className="input"
-                type="text"
-                value={inputValue}
-                onChange={event => setInputValue(event.target.value)}
-                required
-            />
-            {onStartBtn()}   
+            <div className="start-wrapper">
+                <h1>LABYRINTH</h1>
+                <h4 className="name"> Name yourself and start the journey!!</h4>
+                <input className="input"
+                    type="text"
+                    value={inputValue}
+                    onChange={event => setInputValue(event.target.value)}
+                    required
+                />
+                {onStartBtn()}
+            </div>
+               
         </div>
     )
 }

@@ -1,21 +1,25 @@
 body {
     margin: auto;
+}
+
+h1 {
+    text-shadow: 2px 2px 5px rgb(246, 24, 246);
+}
+
+.name {
+    text-shadow: 2px 2px 5px rgb(14, 4, 149);
+    margin-top: 15px;
+    color: red;
+}
+
+.start-game {
+    display: flex;
     background-image: url('../images/rat_maze.jpg');
     background-repeat: no-repeat;
     background-position: right;
     height: 180vw;
     background-size: cover;
     overflow: hidden;
-    color: navy;
-}
-
-h2 {
-    text-shadow: 2px 2px 5px rgb(246, 24, 246);
-    margin-top: 60px;
-}
-
-.start-game {
-    display: flex;
     flex-direction: column;
     align-items: center;
 }
@@ -28,9 +32,18 @@ h2 {
     outline: none;
 }
 
+.start-wrapper {
+    display: flex;
+    color: navy;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+
 /***************** START GAME BUTTON ******************/
 .start-btn {
-    margin-top: 15px;
+    margin-top: 12px;
     background-color: transparent;
     border: none;
     position: relative;
@@ -73,7 +86,6 @@ h2 {
 
 .start-btn:hover:after {
     right:0;
-    
 }
 
 span:before {
@@ -111,4 +123,39 @@ span:after {
     color: rgb(245, 7, 67);
     font-weight: 800;
     transition: all 3s;
+}
+
+/**************** MEDIA QUERIES *******/
+
+@media (min-width: 767px) {
+    .start-game {
+        background-size: cover;
+        width: 100%;
+        height: 140vw;
+        
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .start-wrapper {
+        margin-top: -700px;
+    }
+}
+
+
+@media (min-width: 1300px) {
+    .start-game {
+        background-size: cover;
+        width: 60%;
+        height: 70vw;
+        margin-left: 20%;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .start-wrapper {
+        margin-top: -600px;
+    }
 }

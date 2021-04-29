@@ -1,0 +1,71 @@
+body {
+    overflow: hidden;
+}
+
+h3 {
+    text-shadow: 2px 2px 5px rgb(92, 7, 251);
+    margin-top: 60px;
+}
+
+h4 {
+    text-shadow: 2px 2px 5px rgb(14, 4, 149);
+    margin-top: 60px;
+    color: red;
+}
+
+.game-screen {
+    display: flex;
+    background-image: url('../images/mirror_maze.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-wrapper {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    text-align: justify;
+    color: rgb(101, 246, 4);
+    margin-bottom: 10px;
+}
+
+.directions {
+    display: flex;
+    flex-direction: row;
+}
+
+.btn-directions {
+    display: flex;
+    background-color:rgb(83, 62, 70);
+}
+
+.btn-directions:hover {
+    background-color: red;
+    transition: all 2s;
+}
+
+/****************** MEDIA QUERIES **********/
+@media (min-width: 1300px) {
+    .game-screen {
+        background-size: cover;
+        margin-left: 13%;
+        width: 70%;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .game-wrapper {
+        padding: 100px;
+    }
+}
+  
+
