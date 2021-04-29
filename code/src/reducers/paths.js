@@ -1,6 +1,4 @@
-/* eslint-disable */
 /* eslint-disable linebreak-style */
-
 import { createSlice } from '@reduxjs/toolkit'
 
 const paths = createSlice({
@@ -26,45 +24,41 @@ const paths = createSlice({
             store.path = action.payload
         },
 
-        setPreviousPath: (store, action) => {
+        setPreviousPath: (store) => {
             store.path = store.history[store.history.length - 1]
             store.history = store.history.slice(0, store.history.length - 1)
         },
 
         setError: (store, action) => {
             store.error = action.payload
-        }, 
-
+        },
 
         setLoading: (store, action) => {
             store.loading = action.payload
         }
 
-
     }
 
-
-}) 
+})
 
 export const generatePath = (direction) => {
     return (dispatch, getState) => {
         dispatch(paths.actions.setLoading(true))
-        
+
         if (direction) {
-            
             fetch('https://wk16-backend.herokuapp.com/action', {
                 method: 'POST',
                 headers: {
                 'Content-type': 'application/json'
                 },
-                body: JSON.stringify({ 
-                    username: getState().paths.username, 
+                body: JSON.stringify({
+                    username: getState().paths.username,
                     type: 'move',
                     direction: `${direction}`
-        
+
                     })
                 })
-                .then(res => {
+                .then((res) => {
                     if (res.ok) {
                         dispatch(paths.actions.setError(null))
                         return res.json()
@@ -72,12 +66,10 @@ export const generatePath = (direction) => {
                         throw new Error(res.statusText)
                     }
                 })
-                .then(path => dispatch(paths.actions.setPath(path)))
-                .catch(error => console.error('Error is:', error))
+                .then((path) => dispatch(paths.actions.setPath(path)))
+                .catch((error) => dispatch(paths.actions.setError(error.message)))
                 .finally(() => dispatch(paths.actions.setLoading(false)))
-
-        } else {        
-
+        } else {
             fetch('https://wk16-backend.herokuapp.com/start', {
                 method: 'POST',
                 headers: {
@@ -85,7 +77,7 @@ export const generatePath = (direction) => {
                 },
                 body: JSON.stringify({ username: getState().paths.username })
                 })
-                .then(res => {
+                .then((res) => {
                     if (res.ok) {
                         dispatch(paths.actions.setError(null))
                         return res.json()
@@ -94,25 +86,12 @@ export const generatePath = (direction) => {
                     }
                 })
 
-
-                .then(path => dispatch(paths.actions.setPath(path)))
-                .catch(error => dispatch(paths.actions.setError(error.message)))
+                .then((path) => dispatch(paths.actions.setPath(path)))
+                .catch((error) => dispatch(paths.actions.setError(error.message)))
                 .finally(() => dispatch(paths.actions.setLoading(false)))
-                
-
-
-
-        
-        
-
-        
-      
     }
 }
 }
 
-
-
 export default paths
-
 

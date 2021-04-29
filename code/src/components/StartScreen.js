@@ -1,4 +1,3 @@
-/* eslint-disable */
 /* eslint-disable linebreak-style */
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
@@ -8,7 +7,7 @@ import './startScreen.css'
 
 const StartScreen = () => {
     const [inputValue, setInputValue] = useState('')
-    
+
     const dispatch = useDispatch()
 
     const onUsernameSet = () => {
@@ -17,11 +16,11 @@ const StartScreen = () => {
     }
 
     const onStartBtn = () => {
-        if(inputValue) {
-            return(
-                <button className="start-btn" onClick={onUsernameSet}>
-                    &nbsp;Start<span></span>
-                </button> 
+        if (inputValue) {
+            return (
+                <button type="button" className="start-btn" onClick={onUsernameSet}>
+                    &nbsp;Start<span />
+                </button>
             )
         }
     }
@@ -31,15 +30,15 @@ const StartScreen = () => {
             <div className="start-wrapper">
                 <h1>LABYRINTH</h1>
                 <h4 className="name"> Name yourself and start the journey!!</h4>
-                <input className="input"
-                    type="text"
-                    value={inputValue}
-                    onChange={event => setInputValue(event.target.value)}
-                    required
-                />
+                <input
+                  className="input"
+                  type="text"
+                  value={inputValue}
+                  onChange={(event) => setInputValue(event.target.value)}
+                  required />
                 {onStartBtn()}
             </div>
-               
+
         </div>
     )
 }
