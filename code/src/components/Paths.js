@@ -12,9 +12,11 @@ import './paths.css'
 
 const Paths = () => {
     const path = useSelector(store => store.paths.path)
+    const error = useSelector(store => store.paths.error)
     const loading = useSelector(store => store.paths.loading)
     return (
         <div>
+            {error && `Something went wrong, reason: ${error}`}
             {path
                 ? <GameScreen /> 
                 : <StartScreen />

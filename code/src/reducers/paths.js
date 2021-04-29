@@ -10,6 +10,7 @@ const paths = createSlice({
         username: null,
         path: null,
         history: [],
+        error: null,
         loading: false
 
     },
@@ -29,6 +30,10 @@ const paths = createSlice({
             store.path = store.history[store.history.length - 1]
             store.history = store.history.slice(0, store.history.length - 1)
         },
+
+        setError: (store, action) => {
+            store.error = action.payload
+        }, 
 
 
         setLoading: (store, action) => {
@@ -59,8 +64,16 @@ export const generatePath = (direction) => {
         
                     })
                 })
-                .then(res => res.json())
+                .then(res => {
+                    if (res.ok) {
+                        dispatch(paths.actions.setError(null))
+                        return res.json()
+                    } else {
+                        throw new Error(res.statusText)
+                    }
+                })
                 .then(path => dispatch(paths.actions.setPath(path)))
+                .catch(error => console.error('Error is:', error))
                 .finally(() => dispatch(paths.actions.setLoading(false)))
 
         } else {        
@@ -72,8 +85,18 @@ export const generatePath = (direction) => {
                 },
                 body: JSON.stringify({ username: getState().paths.username })
                 })
-                .then(res => res.json())
+                .then(res => {
+                    if (res.ok) {
+                        dispatch(paths.actions.setError(null))
+                        return res.json()
+                    } else {
+                        throw new Error(res.statusText)
+                    }
+                })
+
+
                 .then(path => dispatch(paths.actions.setPath(path)))
+                .catch(error => dispatch(paths.actions.setError(error.message)))
                 .finally(() => dispatch(paths.actions.setLoading(false)))
                 
 
