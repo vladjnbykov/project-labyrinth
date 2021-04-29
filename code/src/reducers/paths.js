@@ -9,6 +9,7 @@ const paths = createSlice({
     initialState: {
         username: null,
         path: null,
+        history: [],
         loading: false
 
     },
@@ -18,8 +19,17 @@ const paths = createSlice({
         },
 
         setPath: (store, action) => {
+            if (store.path !== null) {
+                store.history = [...store.history, store.path]
+            }
             store.path = action.payload
         },
+
+        setPreviousPath: (store, action) => {
+            store.path = store.history[store.history.length - 1]
+            store.history = store.history.slice(0, store.history.length - 1)
+        },
+
 
         setLoading: (store, action) => {
             store.loading = action.payload

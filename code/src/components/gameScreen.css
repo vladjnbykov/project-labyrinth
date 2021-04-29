@@ -37,6 +37,47 @@ h4 {
     margin-bottom: 10px;
 }
 
+/************ BACK BUTTON *****************/
+.back {
+    margin-top: 50px;
+}
+
+.btn-back {
+    text-decoration: none;
+    background-color: burlywood;
+    color: white;
+    border: 3px solid white;
+    padding: 5px 10px;
+    position: relative;
+    transition: all 1s;
+    overflow: hidden;
+}
+
+.btn-back:before {
+    content: '🐔';
+    color: rgb(245, 240, 248);
+    font-size: 16px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(255, 251, 0);
+    transform: translateX(-100%);
+    transition: all 1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-back:hover:before {
+    transform: translateY(0)
+}
+
+.btn-back:hover {
+    color:white;
+}
+
 .directions {
     display: flex;
     flex-direction: row;
@@ -44,6 +85,7 @@ h4 {
 
 .btn-directions {
     display: flex;
+    padding: 5px 10px 5px 10px;
     background-color:rgb(83, 62, 70);
 }
 

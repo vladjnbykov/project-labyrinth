@@ -15,9 +15,19 @@ const GameScreen = () => {
     const onPathChoice = (direction) => {
         dispatch(generatePath(direction))
     }
+
+    const onPathRevert = () => {
+        dispatch(paths.actions.setPreviousPath())
+    }
     return (
+
+        
         <div className="game-screen">
+            
             <div className="game-wrapper">
+
+                
+
                 <h3>{path.description}</h3>
                 <h4>Are you dare to go:</h4>
                 <div className="directions">
@@ -27,7 +37,12 @@ const GameScreen = () => {
                         onClick={() => onPathChoice(action.direction)}
                         >{action.direction}</button>
                     ))}
+                
+
                 </div>
+                <div className="back">
+                    <button className="btn-back" onClick={onPathRevert}>BACK</button>
+                </div>        
                 
             </div>
             
