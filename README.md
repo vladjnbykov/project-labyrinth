@@ -7,4 +7,4 @@ The player choses the direction out of the ones proposed by computer, can go bac
 ## View it live
 
 The application can be viewed life at Netlify server: 
-https://brave-colden-781fca.netlify.app/
+https://vigorous-boyd-fe79da.netlify.app/
