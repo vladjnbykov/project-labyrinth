@@ -1,113 +1,119 @@
 body {
-    overflow: hidden;
+  overflow: hidden;
+  font-size: 0.50em;
 }
 
 h3 {
-    text-shadow: 2px 2px 5px rgb(92, 7, 251);
-    margin-top: 60px;
+  text-shadow: 2px 2px 5px rgb(92, 7, 251);
+  margin-top: 60px;
 }
 
 h4 {
-    text-shadow: 2px 2px 5px rgb(14, 4, 149);
-    margin-top: 60px;
-    color: red;
+  text-shadow: 2px 2px 5px rgb(14, 4, 149);
+  margin-top: 60px;
+  color: red;
 }
 
 .game-screen {
-    display: flex;
-    background-image: url('../images/mirror_maze.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  background-image: url('../images/mirror_maze.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
 }
 
 .game-wrapper {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 25px;
-    text-align: justify;
-    color: rgb(101, 246, 4);
-    margin-bottom: 10px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  text-align: justify;
+  color: rgb(101, 246, 4);
+  margin-bottom: 10px;
 }
 
 /************ BACK BUTTON *****************/
 .back {
-    margin-top: 50px;
+  margin-top: 50px;
 }
 
 .btn-back {
-    text-decoration: none;
-    background-color: burlywood;
-    color: white;
-    border: 3px solid white;
-    padding: 5px 10px;
-    position: relative;
-    transition: all 1s;
-    overflow: hidden;
+  text-decoration: none;
+  background-color: burlywood;
+  color: white;
+  border: 3px solid white;
+  padding: 5px 10px;
+  position: relative;
+  transition: all 1s;
+  overflow: hidden;
 }
 
 .btn-back:before {
-    content: '🐔';
-    color: rgb(245, 240, 248);
-    font-size: 16px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgb(255, 251, 0);
-    transform: translateX(-100%);
-    transition: all 1s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  content: '🐔';
+  color: rgb(245, 240, 248);
+  font-size: 16px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(255, 251, 0);
+  transform: translateX(-100%);
+  transition: all 1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-back:hover:before {
-    transform: translateY(0)
+  transform: translateY(0)
 }
 
 .btn-back:hover {
-    color:white;
+  color:white;
 }
 
 .directions {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .btn-directions {
-    display: flex;
-    padding: 5px 10px 5px 10px;
-    background-color:rgb(83, 62, 70);
+  display: flex;
+  padding: 5px 10px 5px 10px;
+  background-color:rgb(83, 62, 70);
 }
 
 .btn-directions:hover {
-    background-color: red;
-    transition: all 2s;
+  background-color: red;
+  transition: all 2s;
 }
 
 /****************** MEDIA QUERIES **********/
 @media (min-width: 1300px) {
-    .game-screen {
-        background-size: cover;
-        margin-left: 13%;
-        width: 70%;
-        position: absolute;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .game-wrapper {
-        padding: 100px;
-    }
-}
+  .game-screen {
+      background-size: cover;
+      margin-left: 13%;
+      width: 70%;
+      position: absolute;
+      align-items: center;
+      justify-content: center;
+  }
   
+  .game-wrapper {
+      padding: 100px;
+  }
+}
+@media (min-width: 480px) {
+  body{
+    font-size: 1em ;
+  }
+ 
 
+}

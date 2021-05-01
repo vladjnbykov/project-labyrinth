@@ -1,161 +1,161 @@
 body {
-    margin: auto;
+  margin: auto;
+  background-color: darkgrey;
+  width: 100vw;
 }
 
 h1 {
-    text-shadow: 2px 2px 5px rgb(246, 24, 246);
+  text-shadow: 2px 2px 5px rgb(246, 24, 246);
 }
 
 .name {
-    text-shadow: 2px 2px 5px rgb(14, 4, 149);
-    margin-top: 15px;
-    color: red;
+  text-shadow: 2px 2px 5px rgb(14, 4, 149);
+  margin-top: 15px;
+  color: red;
+  font-size: 10px;
 }
 
 .start-game {
-    display: flex;
-    background-image: url('../images/rat_maze.jpg');
-    background-repeat: no-repeat;
-    background-position: right;
-    height: 180vw;
-    background-size: cover;
-    overflow: hidden;
-    flex-direction: column;
-    align-items: center;
+  height: 100vh;
+  display: flex;
+  background-image: url('../images/rat_maze.jpg');
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+  overflow: hidden;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .input {
-    height: 25px;
-    color: navy;
-    background-color: rgb(236, 246, 246);
-    border: 1px solid rgb(162, 162, 243);
-    outline: none;
+  height: 30px;
+  margin-top: 15px;
+  color: navy;
+  background-color: rgb(236, 246, 246);
+  border: 1px solid rgb(162, 162, 243);
+  outline: none;
 }
 
 .start-wrapper {
-    display: flex;
-    color: navy;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10px;
+  display: flex;
+  color: navy;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -450px;
 }
-
 
 /***************** START GAME BUTTON ******************/
 .start-btn {
-    margin-top: 12px;
-    background-color: transparent;
-    border: none;
-    position: relative;
-    width: 130px;
-    height: 40px;
-    text-transform: uppercase;
-    line-height: 40px;
-    text-align: center;
-    color: white;
-    font-size: 16px;
-    letter-spacing: 8px;
-    overflow: hidden;
+  margin-top: 12px;
+  background-color: transparent;
+  border: none;
+  position: relative;
+  width: 150px;
+  height: 40px;
+  text-transform: uppercase;
+  line-height: 40px;
+  text-align: center;
+  color: white;
+  font-size: 16px;
+  letter-spacing: 8px;
+  padding-right: 0;
+  
+  overflow: hidden;
 }
 
 .start-btn:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 4px;
-    background-color: rgb(117, 246, 203);
-    transition: all 0.7s;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 4px;
+  background-color: rgb(117, 246, 203);
+  transition: all 0.7s;
 }
 
 .start-btn:hover:before {
-    left:0;
+  left:0;
 }
 
 .start-btn:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: -100%;
-    width: 100%;
-    height: 4px;
-    background-color: rgb(117, 246, 203);
-    transition: all 0.7s;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 4px;
+  background-color: rgb(117, 246, 203);
+  transition: all 0.7s;
 }
 
 .start-btn:hover:after {
-    right:0;
+  right:0;
 }
 
 span:before {
-    content: '';
-    position: absolute;
-    top: -100%;
-    right: 0;
-    width: 4px;
-    height: 100%;
-    background-color: rgb(117, 246, 203);
-    transition: all 0.7s;
+  content: '';
+  position: absolute;
+  top: -100%;
+  right: 0;
+  width: 4px;
+  height: 100%;
+  background-color: rgb(117, 246, 203);
+  transition: all 0.7s;
 }
 
 .start-btn:hover span:before {
-    top: 0;
+  top: 0;
 }
 
 span:after {
-    content: '';
-    position: absolute;
-    bottom: -100%;
-    left: 0;
-    width: 4px;
-    height: 100%;
-    background-color: rgb(117, 246, 203);
-    transition: all 0.7s;
+  content: '';
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: rgb(117, 246, 203);
+  transition: all 0.7s;
 }
 
 .start-btn:hover span:after {
-    bottom: 0;
+  bottom: 0;
 }
 
 .start-btn:hover {
-    background-color: rgb(5, 7, 107);
-    color: rgb(245, 7, 67);
-    font-weight: 800;
-    transition: all 3s;
+  background-color: rgb(5, 7, 107);
+  color: rgb(245, 7, 67);
+  font-weight: 800;
+  transition: all 3s;
 }
 
 /**************** MEDIA QUERIES *******/
 
 @media (min-width: 767px) {
-    .start-game {
-        background-size: cover;
-        width: 100%;
-        height: 140vw;
-        
-        position: absolute;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .start-wrapper {
-        margin-top: -700px;
-    }
+  .start-game {
+      background-size: cover;
+      width: 100%;
+      position: absolute;
+      align-items: center;
+      justify-content: center;
+  }
+  
+  .start-wrapper {
+    margin-top: -700px;
+  }
 }
 
-
 @media (min-width: 1300px) {
-    .start-game {
-        background-size: cover;
-        width: 60%;
-        height: 70vw;
-        margin-left: 20%;
-        position: absolute;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .start-wrapper {
-        margin-top: -600px;
-    }
+  .start-game {
+      background-size: cover;
+      position: absolute;
+      align-items: center;
+      justify-content: center;
+  }
+  
+  .start-wrapper {
+    margin-top: -500px;
+  }
 }

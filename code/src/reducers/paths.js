@@ -10,8 +10,8 @@ const paths = createSlice({
         history: [],
         error: null,
         loading: false
-
     },
+
     reducers: {
         setUsername: (store, action) => {
             store.username = action.payload
@@ -36,7 +36,6 @@ const paths = createSlice({
         setLoading: (store, action) => {
             store.loading = action.payload
         }
-
     }
 
 })
@@ -94,4 +93,3 @@ export const generatePath = (direction) => {
 }
 
 export default paths
-

@@ -19,7 +19,7 @@ const StartScreen = () => {
         if (inputValue) {
             return (
                 <button type="button" className="start-btn" onClick={onUsernameSet}>
-                    &nbsp;Start<span />
+                   Start<span />
                 </button>
             )
         }
